@@ -1,0 +1,72 @@
+1. If I build the following code (CODE-1) in KEIL Simulator we get four errors which are shown below.
+Why is this error happening. Where as in CODE-2 the program is building without any errors
+
+
+Research in IF-THEN-ELSE in ARM Assembly and explain the reason for this error.
+
+A Clear writeup not more than a page is expected as the answer to this question.  Points will be awarded based on how clear and well explained the write up is. Perfect and technically correct write up given full 100 points.
+
+
+---------------------------------------------------------------------
+CODE-1
+---------------------------------------------------------------------
+;PRESERVE8
+;thumb
+area appcode, CODE, READONLY
+export __main
+ENTRY
+__main function
+MOV R3, #0x100
+MOV R8, #0x200
+CMP R8, R3 ; do R8 - R3 & updated N & V flags
+ITTTE LT ; or N != V
+MOV R3, #0x100
+MOV R8, #0x200
+MOV R7, #0x200
+MOV R6, #0x200
+stop B stop ; stop program
+endfunc
+end
+
+
+stop B stop ; stop program
+
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Target 1'
+
+assembling if-then-else.s...
+
+if-then-else.s(30): error: A1619E: Specified condition is not consistent with previous IT
+if-then-else.s(31): error: A1619E: Specified condition is not consistent with previous IT
+
+if-then-else.s(32): error: A1619E: Specified condition is not consistent with previous IT
+
+if-then-else.s(33): error: A1619E: Specified condition is not consistent with previous IT
+
+".\Objects\asm3.axf" - 4 Error(s), 0 Warning(s).
+
+-----------------------------------------------------------------------------------
+CODE-2
+-----------------------------------------------------------------------------------
+
+;PRESERVE8
+;thumb
+area appcode, CODE, READONLY
+export __main
+ENTRY
+__main function
+
+MOV R3, #0x100
+MOV R8, #0x200
+CMP R8, R3 ; do R8 - R3 & updated N & V flags
+ITTTE LT ; or N != V
+ADDLT r3, r3,r8
+MOVLT r4, #0
+MOVLT R0, #1
+SUBGE r3, r3, r3 ; Z != 1 pr N == V
+stop B stop ; stop program
+endfunc
+end
+
+
+stop B stop ; stop program
