@@ -7,6 +7,6 @@ are mentioned in Section 9.3.3 Restrictions
 "Each instruction inside the IT block must specify a condition code suffix that is either the same or the logical inverse." 
 (Section 9.3.3 -> point 7)
 
-3. So, in first code, the condition suffix is not used in the subsequent instructions in IT block whereas it is used in 
+3. So, in first code, the condition suffix i.e. 'LT' is not used in the subsequent instructions in IT block whereas it is used in 
 code 2. Thus, second code follows the rule and hence, compiles. The first code does not follow the rule and hence, gives 
 compilation error.
