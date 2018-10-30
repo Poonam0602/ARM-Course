@@ -1,0 +1,33 @@
+
+1. All the three , the sign bit, exponent and fraction are used to represent a floating point number. 
+But, as per my knowledge and understanding, fractional part plays more important role to define precision as the number of digits used after fraction will lead to more precision. 
+The exponent part is used just to increase the range of numbers that is being represented.
+And the sign bit is only to represent sign of number.  
+
+2. Normal representation matissa is > 1 while in subnormal representation, mantissa is smaller number less than one.
+e.g. The number, 0.06 in decimal can be represented in binary as:1.10*2^-6 OR 0.00110*2^-3
+
+The first one , 1.10*2^-6 is normal representation while the other is subnormal represenstation.
+
+Consider number line as below: (Numbers specifies mantissa)
+
+<--------- 0 -------------------------- 1 ---------------------------- 2 --------------  .....   ------>
+           <---- Subnormal -------------><---------- Normal ---------------------------  .....   ------>
+           
+3. Rounding Rules:
+	
+	a. Rounding to Nearest ----> Rounding to nearest, ties to even
+						   ----> Rounding to nearest, ties away from zero		
+	b. Directed Rounding   ----> Rounding towards zero
+						   ----> Rounding towards + infinity
+						   ----> Rounding towards - infinity
+												 
+	The methods are self explanatory. Let's take some examples to understand the representation well.
+-------------------------------------------------------------------------------------------	
+Values ---->					1.40  		   1.60 	  1.50 		   2.50 	   –1.50
+--------------------------------------------------------------------------------------------
+▪ Towards zero 					1 				1 			1 			2 			–1
+▪ Round down (−∞) 				1 				1			1			2			–2
+▪ Round up (+∞) 				2 				2 			2 			3 			–1
+▪ Nearest Even (default)		2 				2 			2 			2 			–2
+▪ Nearest away from zero		2 				2 			2 			3 			–2
