@@ -1,15 +1,15 @@
-PRESERVE8
-THUMB
-	AREA appcode, CODE, READONLY
-    export __main	 
-	ENTRY
- __main  FUNCTION
+	 PRESERVE8
+     THUMB
+     AREA     appcode, CODE, READONLY
+     EXPORT __main
+	 ENTRY 
+__main  FUNCTION
 
 		MOV R0,#10				;Holding the Number of Terms in Series 'n' 
         MOV R1,#1				;Counting Variable 'i' 
         VMOV.F32 S0,#1			;Holding the sum of series elements 's' 
         VMOV.F32 S1,#1			;Temp Variable to hold the intermediate series elements 't' 
-        VMOV.F32 S2,#3			;Holding 'x' Value 
+        VMOV.F32 S2,#20			;Holding 'x' Value 
 LOOP1		CMP R1,R0		;Compare 'i' and 'n'  
 			BLE LOOP				;if i < n goto LOOP 
 			B stop					;else goto stop 
