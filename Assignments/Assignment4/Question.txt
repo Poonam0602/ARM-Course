@@ -1,1 +1,4 @@
 Implementation of Exponential Series in Cortex –M4 and on KEIL Similator 
+
+Reference: https://www.h-schmidt.net/FloatConverter/IEEE754.html
+(for checking the results)
