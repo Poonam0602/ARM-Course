@@ -1,3 +1,3 @@
-Mohan Krishna(MT2017509)
+Mohan Krishna Madineni(MT2017509)
 Poonam Warade (MT2017511)
-Vamsi (MT2017526)
+Vamsi Krishna Guduru (MT2017526)
